@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 900px;
+			height:500px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -400px;
+			margin-top: -200px;
+			padding-top: 30px;
+			line-height: 500px;
+		}
+		ul li{
+			height: 200px;
+			margin-top: 30px;
+			width: 200px;
+			float: left;
+			margin-left: 20px;
+			background: url(cd.png) no-repeat;
+			background-position: 0 70px;
+			padding-top: 0px;
+			transition: 1s all ease;
+		}
+		/*background-position: 0 10px;
+		padding-top: 70px;*/
+		/*img{
+			margin-top: 90px;
+		}*/
+		/*@keyframes test{
+			from{开始位置}
+			to{结束位置}
+		}*/
+		/*@-webkit-keyframes test{
+			from{background-position: 0 0;padding-top: 0;}
+			to{background-position: 0 10px;padding-top: 70px;}
+		}*/
+		li:hover{
+			padding-top: 70px;
+			background-position: 0 20px;
+			-webkit-transform: rotate(100deg);
+		}
+	</style>
+	<script>
+		
+	</script>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<img src="img_01.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img_01.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img_01.jpg" alt="" />
+			</li>
+			<li>
+				<img src="img_01.jpg" alt="" />
+			</li>
+		</ul>
+	</body>
+</html>

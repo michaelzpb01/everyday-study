@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.box{
+			text-align: center;
+			line-height:300px;
+			font-size: 100px;
+			font-weight: bold;
+			width: 200px;
+			height: 300px;
+			position: relative;
+			margin: 150px auto;
+			transition: 1s all ease ;
+			transform-style:preserve-3d;
+			perspective: 800px;
+		}
+		.box span{
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: 1s all ease ;
+			transform-style:preserve-3d;
+		}
+		
+		.top{
+			-webkit-transform: translateZ(1px);
+			background: red;
+		}
+		.bot{
+			-webkit-transform: translateZ(-1px) scale(-1,1);
+			background: green;
+		}
+		
+		.box:active{
+			-webkit-transform: rotateY(180deg);
+		};
+	</style>
+	<script>
+	
+	</script>
+	</head>
+	<body>
+		<div class="box">
+			<span class="top">top</span>
+			<span class="bot">bot</span>
+		</div>
+	</body>
+</html>

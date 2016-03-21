@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var oDiv = document.getElementsByTagName('div')[0];
+			oDiv.addEventListener('click',function(){
+				oDiv.style.WebkitTransition = '1s all ease';
+				oDiv.style.width = '500px';
+				oDiv.addEventListener('transitionend',function(){
+					alert(1)
+				},false);
+			},false);
+		},false);
+	</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

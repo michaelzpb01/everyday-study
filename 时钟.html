@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			height: 300px;
+			width: 300px;
+			border: 3px solid #000;
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -150px;
+			margin-left: -150px;
+		}
+		.box span.scale{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			margin-left: -3px;
+			width: 5px;
+			height: 10px;
+			background: #000;
+			-webkit-transform-origin:center 150px ;
+			
+		}
+		.box span.scale_s{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			margin-left: -3px;
+			width: 8px;
+			height: 14px;
+			background: #000;
+			-webkit-transform-origin:center 150px ;
+			
+		}
+		.box span em{
+			position: absolute;
+			top: 20px;
+			font-style: normal;
+			font-size: 20px;
+			font-weight: bold;
+			width:30px;
+			margin-left: -10px;
+			text-align: center;
+			/*-webkit-transform: rotate(90deg);*/
+		}
+		.box div{
+			position: absolute;
+			left: 50%;
+			border-radius: 100% 100% 0 0;
+			-webkit-transform-origin: center bottom;
+		}
+		.box .hor{
+			height: 70px;
+			width: 10px;
+			top: 80px;
+			background: black;
+			margin-left: -3px;
+		}
+		.box .min{
+			height: 90px;
+			width: 7px;
+			top: 60px;
+			background: black;
+			margin-left: -2px;
+		}
+		.box .sec{
+			height: 110px;
+			width: 4px;
+			top: 40px;
+			background: red;
+		}
+		.box i{
+			height: 16px;
+			width: 16px;
+			background: #000000;
+			position: absolute;
+			top: 142px;
+			left: 142px;
+			border-radius: 50%;
+		}
+	</style>
+	<script>
+		
+		document.addEventListener('DOMContentLoaded',function(){
+			var oBox = document.getElementById('box');
+			var oHor = document.querySelector('.hor');
+			var oMin = document.querySelector('.min');
+			var oSec = document.querySelector('.sec');
+			var N = 60;
+			
+			for(var i = 0;i<N;i++){
+				var oS = document.createElement('span');
+				if(i%5){
+					oS.className = 'scale';
+				}else{
+					oS.className = 'scale_s';
+					var oEm = document.createElement('em');
+					oEm.innerHTML = i/5||12;
+					oS.appendChild(oEm);
+					oEm.style.WebkitTransform= 'rotate('+-i*6+'deg)';
+				}
+				oS.style.WebkitTransform = 'rotate('+i*6+'deg)';
+				oBox.appendChild(oS);
+			}
+			
+			function sport(){
+				var oDate = new Date();
+				var h = oDate.getHours();
+				var m = oDate.getMinutes();
+				var s = oDate.getSeconds();
+				var ms = oDate.getMilliseconds();
+				oHor.style.WebkitTransform='rotate('+(h*30+m/60*30)+'deg)';
+				oMin.style.WebkitTransform='rotate('+(m*6+s/60*6)+'deg)';
+				oSec.style.WebkitTransform='rotate('+(s*6+ms/1000*6)+'deg)';
+			}
+			sport();
+			setInterval(sport,1);
+		},false);
+	</script>
+	</head>
+	<body>
+		<div id="div"></div>
+		<div class="box" id="box">
+			<div class="hor"></div>
+			<div class="min"></div>
+			<div class="sec"></div>
+			<i></i>
+		</div>
+	</body>
+</html>

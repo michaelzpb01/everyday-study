@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 600px;
+			height: 80px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -40px;
+			margin-left: -300px;
+		}
+		li{
+			float: left;
+			width: 100px;
+			height: 60px;
+			overflow: hidden;
+			border-radius: 15px;
+			margin: 10px;
+			background: url(img_01.jpg) no-repeat;
+			transition: 2s all ease;
+		}
+		li div{
+			height: 100%;
+			overflow: hidden;
+			background: #ccc;
+			text-align: center;
+			line-height: 60px;
+			transition: .7s all ease;
+		}
+		li div:hover{
+			transform: translateY(-90px);
+			/*height: 0;*/
+		}
+	</style>
+	<script>
+	
+	</script>
+	</head>
+	<body>
+		<ul>
+			<li><div>you</div></li>
+			<li><div>is</div></li>
+			<li><div>not</div></li>
+			<li><div>defined</div></li>
+			<li><div>ok？</div></li>
+		</ul>
+	</body>
+</html>

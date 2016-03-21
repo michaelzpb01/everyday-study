@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		body{
+			text-align: center;
+			
+		}
+		video{
+			width: 800px;
+			height: 450px;
+		}
+		.bar_box{
+			width: 800px;
+			height: 30px;
+			margin: 0 auto;
+			background: #ccc;
+			position: relative;
+			top: 0;
+			left: 0;
+			margin-top: 50px;
+		}
+		.pro{
+			width: 100px;
+			height: 100%;
+			background: #999;
+		}
+		.bar{
+			width: 50px;
+			height: 100%;
+			background: #333;
+			position: absolute;
+			left: 100px;
+			top: 0;
+		}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			var oStart = document.querySelector('#start');
+			var oStop = document.querySelector('#stop');
+			var oClear = document.querySelector('#clear');
+			var oBar_Box = document.querySelector('.bar_box');
+			var oPro = document.querySelector('.pro');
+			var oBar = document.querySelector('.bar');
+			var oV = document.querySelector('video');
+			var oTxt = document.querySelector('#txt');
+			oStart.onclick = function(){
+				oV.play();
+			};
+			
+			oV.ontimeupdata = function(){
+				oTxt.innerHTML = this.currentTime;
+			};
+		},false);
+	</script>
+	</head>
+	<body>
+		<input type="button" value="开始" id="start"/>
+		<input type="button" value="暂停" id="stop"/>
+		<input type="button" value="停止" id="clear"/>
+		<div class="bar_box">
+			<div class="pro"></div>
+			<div class="bar"></div>
+		</div>
+		<video src="video.mp4">
+			浏览器版本过低，请升级您的浏览器
+		</video>
+		<div id="txt"></div>
+	</body>
+</html>

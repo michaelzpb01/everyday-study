@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		
+	</style>
+	<script>
+		function click1(){
+			alert('aaa');
+		}
+		document.addEventListener('DOMContentLoaded',function(){
+			var oBtn1 = document.querySelector('.fir');
+			var oBtn2 = document.querySelector('.last');
+			
+			oBtn1.addEventListener('click',click1,false);
+			oBtn2.addEventListener('click',function(){
+				click2();
+			},false);
+		},false);
+		
+		
+		function click2(){
+			oBtn1.removeEventListener('click',click1,false);
+		}
+	</script>
+	</head>
+	<body>
+		<input type="button"  value="aaa" class="fir"/>
+		<input type="button" value="bbb"  class="last"/>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+			list-style: none;
+		}
+		ul{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 302px;
+			height: 200px;
+			margin-left: -150px;
+			margin-top: -100px;
+			perspective: 800px;
+		}
+		li{
+			position: absolute;
+			left: 0;
+			top: 0;
+			border: 1px solid #000;
+			height: 200px;
+			width: 200px;
+			text-align: center;
+			line-height: 200px;
+			font-size: 100px;
+			font-weight: bold;
+			background: #CC3300;
+			-webkit-transition: .4s all ease;
+			opacity: 0;
+		}
+		.cur{
+			z-index: 5;
+			opacity: 1;
+		}
+		.l1{
+			-webkit-transform:translate(-150px) rotateY(60deg);
+			z-index: 3;
+			opacity: 0.8;
+		}
+		.r1{
+			-webkit-transform:translate(150px) rotateY(-60deg);
+			z-index: 3;
+			opacity: 0.8;
+		}
+		.l2{
+			-webkit-transform:translate(-170px) rotateY(65deg);
+			z-index: 1;
+			opacity: 0;
+		}
+		.r2{
+			-webkit-transform:translate(170px) rotateY(-65deg);
+			z-index: 1;
+			opacity: 0;
+		}
+		
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){	
+			var oPrev = document.querySelector('#prev');
+			var oNext = document.querySelector('#next');
+			var aLi = document.querySelectorAll('ul li');
+			var arr = [];
+			for(var i = 0;i<aLi.length;i++){
+				arr.push(aLi[i].className);
+			}
+			oNext.onclick = function(){
+				arr.unshift(arr.pop());
+				for(var i = 0;i<aLi.length;i++){
+					aLi[i].className = arr[i];
+				}
+			};
+			oPrev.onclick = function(){
+				arr.push(arr.shift());
+				for(var i = 0;i<aLi.length;i++){
+					aLi[i].className = arr[i];
+				}
+			};
+		});
+	</script>
+	</head>
+	<body>
+		<a href="javascript:;" id="prev">↑</a>
+		<a href="javascript:;" id="next">↓</a>
+		<ul>
+			<li class="l2">1</li>
+			<li class="l1">2</li>
+			<li class="cur">3</li>
+			<li class="r1">4</li>
+			<li class="r2">5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+		</ul>
+	</body>
+</html>
